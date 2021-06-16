@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notificacion_push/screen/home_screen.dart';
 import 'package:notificacion_push/screen/message_screen.dart';
+import 'package:notificacion_push/services/key_sha.dart';
 
-void main() {
+void main() async {
+  //Ejecutando cuando esta listo el context
+  WidgetsFlutterBinding.ensureInitialized();
+  await PushNotificationService.initializeApp();
   runApp(MyApp());
 }
 
