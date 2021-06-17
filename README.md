@@ -1,6 +1,13 @@
 # notificacion_push
 
-A new Flutter project.
+Proyecto develeopeado con flutter
+
+## Objetivos.
+
+1. Generar una notificacion push y enviarle su resp correspondiente.
+2. Generar una actualización tal vez cuando el telefono no tenga la conectividad, intento generar persistencia
+de data
+
 
 ## Getting Started
 

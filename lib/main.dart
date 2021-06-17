@@ -10,7 +10,22 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulsWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //Metodo initstate
+  @override
+  void initState() {
+    super.initState();
+    //accedo al conext y muestro la notificacioncita
+    PushNotificationService.streamMessageController.listen((message) {
+      print('El mensaje de la app: $message');
+    });
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
