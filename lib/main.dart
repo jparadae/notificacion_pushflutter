@@ -16,6 +16,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+//Var para navegar a la 2da pantalla con argumentos
+  final GlobalKey<NavigatorState> navagacionKey =
+      new GlobalKey<NavigatorState>();
+
+  final GlobalKey<ScaffoldMessengerState> messageKey =
+      new GlobalKey<ScaffoldMessengerState>();
+
   //Metodo initstate
   @override
   void initState() {
@@ -23,6 +30,11 @@ class _MyAppState extends State<MyApp> {
     //accedo al conext y muestro la notificacioncita
     PushNotificationService.streamMessageController.listen((message) {
       print('El mensaje de la app: $message');
+
+      navagacionKey.currentState?.pushNamed('message', arguments: message);
+
+      final snackBar = SnackBar(content: Text(message));
+      messageKey.currentState?.showSnackBar(snackBar);
     });
   }
 
@@ -32,7 +44,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'home',
+      initialRoute: 'message',
+      navigatorKey: navagacionKey,
+      scaffoldMessengerKey: messageKey,
       routes: {
         'home': (_) => HomeScreen(), //(_) no le pase el context
         'message': (_) => MessageScreen(),

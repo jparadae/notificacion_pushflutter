@@ -40,7 +40,7 @@ class PushNotificationService {
     //databb esto te sirve al tipo de data puede reaccionar a opciones diferentes y te mueves de pantalla
     print(message.data);
     _streamMessageController.sink
-        .add(message.notification?.title ?? 'No viene el titulo');
+        .add(message.data['message'] ?? 'No viene nada');
   }
 
   //Iniciar la instancia para generar el token del dispositivo
