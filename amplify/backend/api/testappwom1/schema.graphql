@@ -1,0 +1,7 @@
+type TareasPendientes @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  descripcion: String
+  is_complete: Boolean
+}
+ 
