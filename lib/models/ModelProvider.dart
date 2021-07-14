@@ -16,27 +16,27 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:amplify_datastore_plugin_interface/amplify_datastore_plugin_interface.dart';
-import 'TareasPendientes.dart';
+import 'Todo.dart';
 
-export 'TareasPendientes.dart';
+export 'Todo.dart';
 
 class ModelProvider implements ModelProviderInterface {
   @override
-  String version = "0632dcea6ce897fd5a417e05be5595b1";
+  String version = "371efcf4920535adf75f674858b892fd";
   @override
-  List<ModelSchema> modelSchemas = [TareasPendientes.schema];
+  List<ModelSchema> modelSchemas = [Todo.schema];
   static final ModelProvider _instance = ModelProvider();
 
   static ModelProvider get instance => _instance;
   
   ModelType getModelTypeByModelName(String modelName) {
     switch(modelName) {
-    case "TareasPendientes": {
-    return TareasPendientes.classType;
+    case "Todo": {
+    return Todo.classType;
     }
     break;
     default: {
-    throw Exception("Failed to find model in model provider for model name: " + modelName);
+    throw Exception("No se pudo encontrar el modelo en el proveedor de modelos para el nombre del modelo: " + modelName);
     }
     }
   }

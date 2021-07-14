@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "cognito44fb3f48": {}
+        "cognito44fb3f48": {},
+        "testappwom14db08f48": {}
       }
     }
   }
