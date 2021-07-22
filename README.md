@@ -9,6 +9,19 @@ Proyecto develeopeado con flutter
 de data
 
 
+## Estructura proyecto segun integrador de notificacion y sincronización
+
+1. Para utilizar firebase: 
+Nota: puedes solamente utilizar la rama main del proyecto
+1.1. Renombrar el file main.dart a main_amplify.dart
+1.2. Renombrar el file main_firebase.dart a main.dart
+
+2. Para utilizar sincronización de datos con aws amplify:
+2.1. utilizar la rama flutter_awsamplify
+2.2. instalar amplify mediante curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
+2.3. realizar el pull del modelo inicial de amplify mediante amplify pull --appId d3pdvv6wg6sklm --envName staging
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
